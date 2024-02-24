@@ -8,6 +8,10 @@ class Animal {
     console.log(sound);
   }
 
+  get metaData() {
+    return `Type: ${this.type}, Legs: ${this.legs}`;
+  }
+
   static return10() {
     return 10;
   }
@@ -26,3 +30,15 @@ console.log(Animal.return10()); // when we have static by a function in the clas
 // timestamp: 41:11;
 
 // timestamp: 44:00 git method.
+
+console.log(cat.metaData);    // this calls the git method. It's just something slight work.
+
+
+// inheritance
+
+class Cat extends Animal {
+  constructor(type, legs, tail) {
+    super(type, legs);    // this gets the constructor stuff from the Animal class since we are inheriting it, and don't need to write out here.
+    this.tail = tail;
+  }
+}
